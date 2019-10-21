@@ -10,11 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    
+    
+    @IBOutlet weak var zeroTip: UIButton!
+    @IBOutlet weak var tenPercentTip: UIButton!
+    @IBOutlet weak var twentyPercentTip: UIButton!
+    
+    @IBOutlet weak var splitNumberLabel: UILabel!
+    @IBOutlet weak var billTotalField: UITextField!
+    
+
+
+    
+    
+    @IBAction func tipChanged(_ sender: UIButton) {
     }
-
-
+    
+    @IBAction func calculateTipPressed(_ sender: Any) {
+    }
+    
+    @IBAction func stepperValueChanged(_ sender: Any) {
+    }
 }
 
