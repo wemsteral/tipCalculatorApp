@@ -10,11 +10,11 @@ import UIKit
 
 struct TipCalculator {
     
-    var tipPercentage:Float?
-    var foodBill:Float?
-    var noOfPeople:Int?
+    var tipPercentage:Float = 0.1
+    var foodBill:Float = 0.0
+    var noOfPeople:Int = 1
     
-    mutating func setTipPercentage(buttonTitle: String) {
+    mutating func setTipPercentage(_ buttonTitle: String) {
         switch(buttonTitle) {
         case "10%":
             tipPercentage = 0.1
@@ -27,7 +27,19 @@ struct TipCalculator {
     
     
     mutating func getTipPercentage() -> Float {
-        return tipPercentage ?? 0.0
+        return tipPercentage 
+    }
+    
+    
+    
+    mutating func setNoOfPeople(_ splitNumber: Int) {
+        noOfPeople = splitNumber
+    }
+    
+    
+    
+    mutating func setFoodBill(total: Float) {
+        foodBill = total
     }
     
     
