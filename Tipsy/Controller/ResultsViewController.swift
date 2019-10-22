@@ -13,9 +13,12 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var settingsLabel: UILabel!
     
+    var totalPP:Float?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        totalLabel.text = String(totalPP!)
     }
     
     @IBAction func recalculateButtonPressed(_ sender: UIButton) {
