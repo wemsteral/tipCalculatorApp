@@ -12,7 +12,7 @@ struct TipCalculator {
     
     var tipPercentage:Float = 0.1
     var foodBill:Float = 0.0
-    var noOfPeople:Int = 1
+    var noOfPeople:Int = 2
     var totalPerPerson:Float = 0.0
     
     mutating func setTipPercentage(_ buttonTitle: String) {
@@ -45,7 +45,6 @@ struct TipCalculator {
     
     
     mutating func calcTotalPerPerson(tip: Float, noOfPeople: Int, foodBill: Float) -> Float {
-        
         totalPerPerson = (foodBill + (foodBill * tip)) / Float(noOfPeople)
         return totalPerPerson
     }

@@ -19,9 +19,6 @@ class CalculateViewController: UIViewController {
     
     var tipCalculator = TipCalculator()
 
-    
-    
-    
     @IBAction func tipChanged(_ sender: UIButton) {
         tipAmountButtons.forEach( { $0.isSelected = false
         })
@@ -31,11 +28,10 @@ class CalculateViewController: UIViewController {
     }
     
     
-    
-    
     @IBAction func calculateTipPressed(_ sender: UIButton) {
-        print(tipCalculator.calcTotalPerPerson(tip: tipCalculator.tipPercentage, noOfPeople: tipCalculator.noOfPeople, foodBill: tipCalculator.foodBill))
+        tipCalculator.calcTotalPerPerson(tip: tipCalculator.tipPercentage, noOfPeople: tipCalculator.noOfPeople, foodBill: tipCalculator.foodBill)
         self.performSegue(withIdentifier: "goToResult", sender: self)
+        print(tipCalculator.totalPerPerson)
         
     }
     
@@ -44,12 +40,12 @@ class CalculateViewController: UIViewController {
             let destinationVC = segue.destination as! ResultsViewController
             
             destinationVC.totalPP = tipCalculator.totalPerPerson
-            print(tipCalculator.totalPerPerson)
+            destinationVC.noOfPeople = tipCalculator.noOfPeople
+            destinationVC.tipAmount = tipCalculator.tipPercentage
+            
+            
         }
     }
-    
-    
-    
     
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
@@ -57,8 +53,6 @@ class CalculateViewController: UIViewController {
         splitNumberLabel.text = String(tipCalculator.noOfPeople)
         
     }
-    
-    
     
     
     @IBAction func billTotalUpdated(_ sender: UITextField) {
@@ -73,9 +67,6 @@ class CalculateViewController: UIViewController {
             tipCalculator.setFoodBill(total: 0.0)
         }
     }
-    
-    
-    
     
     
     // useful function to dismiss keypad with outside touch

@@ -14,11 +14,14 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var settingsLabel: UILabel!
     
     var totalPP:Float?
+    var noOfPeople:Int?
+    var tipAmount:Float?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        totalLabel.text = String(totalPP!)
+        totalLabel.text = "£" + String(format: "%.2f", totalPP!)
+        settingsLabel.text = "Split between \(noOfPeople!) people, with \(tipAmount! * 100)% tip"
     }
     
     @IBAction func recalculateButtonPressed(_ sender: UIButton) {
